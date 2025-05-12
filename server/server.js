@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const path = require("path");
 
 // Cargar variables de entorno
 dotenv.config();
@@ -33,13 +34,21 @@ mongoose
     process.exit(1); // Detener la aplicación si la conexión a la base de datos falla
   });
 
-// Rutas
+// Rutas de la API
 app.use("/api/auth", authRoutes);
 app.use("/api/users", usersRoutes);
 
 // Ruta de prueba
 app.get("/", (req, res) => {
   res.send("API funcionando correctamente");
+});
+
+// Servir archivos estáticos de React
+app.use(express.static(path.join(__dirname, "../client/build")));
+
+// Ruta fallback: cualquier ruta no encontrada por el backend va a React
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
 });
 
 // Iniciar servidor
