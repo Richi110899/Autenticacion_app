@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "nodemon server/server.js",
+    "start": "node server/server.js"
   },
   "keywords": [],
   "author": "Ricardo Antonio Gómez Sotomayor <ricardo.gomez@tecsup.edu.pe>",
