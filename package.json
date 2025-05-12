@@ -1,18 +1,21 @@
 {
-  "name": "autenticacion_app",
+  "name": "desplegando",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ricardo Antonio Gómez Sotomayor <ricardo.gomez@tecsup.edu.pe>",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "autenticacion_app": "file:",
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
+    "desplegando": "file:",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
@@ -21,5 +24,6 @@
   "devDependencies": {
     "concurrently": "^9.1.2",
     "nodemon": "^3.1.10"
-  }
+  },
+  "private": false
 }
